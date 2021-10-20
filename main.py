@@ -23,6 +23,10 @@ def afisare_partea_intreaga(lista):
    for element in lista :
         result_list.append(int(extract_partea_intreaga(element)))
    return result_list
+def test_afisare_partea_intreaga():
+    assert afisare_partea_intreaga([1.5, -3.3, 8, 9.8, 3.2])== [1, -3, 8, 9, 3]
+    assert afisare_partea_intreaga([1.5, 3.2])== [1,3]
+    assert afisare_partea_intreaga([1.0, 10.1])== [1, 10]
 def get_numere_din_interval(lista,capat1,capat2):
     '''
     fuctia returneaza numerele din lista ce ce afla in intervalul deschis dat de capat1 si capat 2
@@ -133,5 +137,6 @@ def main():
     test_get_numere_din_interval()
     test_get_numere_partea_intreaga_divizor_partea_fractionara()
     test_convertire_numere_in_format_string()
+    test_afisare_partea_intreaga()
 if __name__ == '__main__':
     main()
