@@ -89,14 +89,20 @@ def convertire_numere_in_format_string(lista):
             while nri > 9:
                 elem_nou += lista_numere[nri % 10]
                 nri = nri // 10
-                elem_nou += lista_numere[nri]
+            elem_nou += lista_numere[nri]
             while nrf > 9:
                 elem_nou +=lista_numerel [nri % 10]
                 nri = nri // 10
             elem_nou += lista_semne[1]
             elem_nou += lista_numere[nrf]
         rezult_list.append(elem_nou)
-    return rezult_list
+    if len(rezult_list) == 0:
+        return None
+    else:
+        return rezult_list
+def test_convertire_numere_in_format_string():
+    assert convertire_numere_in_format_string(2,4.1)== ["doi","patruvirgulaunu"]
+    assert convertire_numere_in_format_string() == None
 def main():
     stop = False
     lista = []
@@ -126,5 +132,6 @@ def main():
             print(convertire_numere_in_format_string(lista))
     test_get_numere_din_interval()
     test_get_numere_partea_intreaga_divizor_partea_fractionara()
+    test_convertire_numere_in_format_string()
 if __name__ == '__main__':
     main()
